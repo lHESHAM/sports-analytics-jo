@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل الأداء الرياضي</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Theme toggle button -->
+    <button id="theme-toggle" class="theme-toggle">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+    </button>
+
+    <!-- Landing page -->
+    <div id="landing-page" class="landing-page">
+        <div class="landing-content">
+            <div class="logo-container">
+                <div class="logo">
+                    <i class="fas fa-futbol"></i>
+                </div>
+            </div>
+            <h1>نظام تحليل الأداء الكروي</h1>
+            <p>تحليل احترافي للاعبين باستخدام الذكاء الاصطناعي  </p>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon"><i class="fas fa-robot"></i></div>
+                    <h3>تحليل ذكي</h3>
+                    <p>تحليل متقدم باستخدام الذكاء الاصطناعي</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>إحصائيات دقيقة</h3>
+                    <p>قياسات دقيقة لمختلف جوانب الأداء الفني</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3>توصيات مخصصة</h3>
+                    <p>نصائح لتطوير المهارات بناءً على نقاط القوة والضعف</p>
+                </div>
+            </div>
+            <button id="start-app" class="start-button">
+                <span>ابدأ التحليل الآن</span>
+                <i class="fas fa-arrow-left"></i>
+            </button>
+        </div>
+        <div class="landing-background">
+            <div class="field-overlay"></div>
+        </div>
+    </div>
+
+    <div id="app-container" class="app-container" style="display: none;">
+        <!-- Header with football field background -->
+        <header class="football-header">
+            <div class="header-content">
+                <h1><i class="fas fa-futbol"></i> نظام تحليل الأداء الكروي</h1>
+                <p>تحليل احترافي للاعبين باستخدام الذكاء الاصطناعي </p>
+            </div>
+            <div class="field-overlay"></div>
+        </header>
+
+        <div class="main-content">
+            <!-- Step indicator -->
+            <div class="step-indicator">
+                <div class="step active" id="step-upload">
+                    <div class="step-number">1</div>
+                    <div class="step-label">تحميل الفيديو</div>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step" id="step-analyze">
+                    <div class="step-number">2</div>
+                    <div class="step-label">تحليل الأداء</div>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step" id="step-results">
+                    <div class="step-number">3</div>
+                    <div class="step-label">النتائج والتوصيات</div>
+                </div>
+            </div>
+
+            <!-- Upload section -->
+            <section id="upload-section" class="card">
+                <div class="card-header">
+                    <h2><i class="fas fa-upload"></i> تحميل فيديو للتحليل</h2>
+                    <p>قم بتحميل فيديو قصير للاعب كرة قدم (الحد الأقصى: 50 ميجابايت)</p>
+                </div>
+                <div class="card-body">
+                    <!-- Position selection on football pitch -->
+                    <div class="position-selection-container">
+                        <h3 class="section-title"><i class="fas fa-user-tag"></i> حدد مركز اللاعب</h3>
+                        <div class="football-pitch">
+                            <!-- Goal and penalty areas -->
+                            <div class="goal-area-top"></div>
+                            <div class="goal-area-bottom"></div>
+                            <div class="penalty-area-top"></div>
+                            <div class="penalty-area-bottom"></div>
+
+                            <!-- Goal posts -->
+                            <div class="goal-top"></div>
+                            <div class="goal-bottom"></div>
+
+                            <!-- Penalty spots -->
+                            <div class="penalty-spot-top"></div>
+                            <div class="penalty-spot-bottom"></div>
+
+                            <!-- Center circle -->
+                            <div class="center-circle"></div>
+
+                            <!-- Goalkeeper -->
+                            <div class="position-marker" data-position="GK" title="حارس مرمى (GK)"></div>
+
+                            <!-- Defenders -->
+                            <div class="position-marker" data-position="LB" title="ظهير أيسر (LB)"></div>
+                            <div class="position-marker" data-position="CB" title="قلب دفاع (CB)"></div>
+                            <div class="position-marker" data-position="RB" title="ظهير أيمن (RB)"></div>
+
+                            <!-- Midfielders -->
+                            <div class="position-marker" data-position="CDM" title="لاعب وسط دفاعي (CDM)"></div>
+                            <div class="position-marker" data-position="CM" title="لاعب وسط (CM)"></div>
+                            <div class="position-marker" data-position="CAM" title="لاعب وسط هجومي (CAM)"></div>
+
+                            <!-- Forwards -->
+                            <div class="position-marker" data-position="LW" title="جناح أيسر (LW)"></div>
+                            <div class="position-marker" data-position="ST" title="مهاجم صريح (ST)"></div>
+                            <div class="position-marker" data-position="RW" title="جناح أيمن (RW)"></div>
+                        </div>
+                        <div id="selected-position" class="selected-position">المركز المحدد: <span>غير محدد</span></div>
+                    </div>
+
+                    <div class="file-input-container">
+                        <label for="videoInput" class="file-input-label">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <span>اختر ملف فيديو أو اسحبه هنا</span>
+                            <span class="file-formats">MP4, MOV, AVI</span>
+                        </label>
+                        <input type="file" id="videoInput" accept="video/*">
+                        <div id="fileName" class="file-name"></div>
+                    </div>
+                    <button id="analyzeBtn" class="primary-button">
+                        <span>تحليل الأداء</span>
+                        <i class="fas fa-chart-line"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Loading section -->
+            <div id="loading" style="display: none;" class="loading-container">
+                <div class="football-loader">
+                    <div class="football">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                </div>
+                <div class="loading-text">جاري تحليل الفيديو باستخدام الذكاء الاصطناعي...</div>
+                <div class="loading-subtext">يتم استخراج الإطارات وتحليل الأداء الفني للاعب</div>
+            </div>
+
+            <!-- Results container -->
+            <div id="resultsContainer"></div>
+        </div>
+
+      
+
+    <script src="app.js"></script>
+</body>
+</html>
